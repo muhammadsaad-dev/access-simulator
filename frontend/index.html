@@ -8,54 +8,57 @@
         font-family: Arial, sans-serif;
         padding: 20px;
       }
+      #preview {
+        white-space: pre-wrap;
+        background: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
       table {
-        width: 100%;
         border-collapse: collapse;
-        margin-bottom: 20px;
+        width: 100%;
+        margin-top: 20px;
       }
       th,
       td {
-        border: 1px solid #ccc;
+        border: 1px solid #333;
         padding: 8px;
-        text-align: center;
+        text-align: left;
       }
       th {
-        background-color: #f4f4f4;
+        background-color: #eee;
       }
-      button {
-        padding: 10px 20px;
-        cursor: pointer;
+      td ul {
+        margin: 0;
+        padding-left: 20px;
       }
       .granted {
         color: green;
+        font-weight: bold;
       }
       .denied {
         color: red;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
-    <h1>Access Simulator</h1>
+    <h1>HR Access Simulator</h1>
 
-    <table id="employeeTable">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Access Level</th>
-          <th>Request Time</th>
-          <th>Room</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Employees will be loaded here -->
-      </tbody>
-    </table>
+    <label for="fileInput">Upload Employee JSON:</label>
+    <input type="file" id="fileInput" accept=".json" />
 
-    <button id="simulateBtn">Simulate Access</button>
+    <h3>Uploaded Data Preview:</h3>
+    <div id="preview">No file uploaded yet.</div>
 
-    <h2>Results</h2>
-    <ul id="results"></ul>
+    <button id="simulateBtn" disabled>Simulate Access</button>
 
-    <script src="app.js"></script>
+    <h2>Results:</h2>
+    <div id="results"></div>
+
+    <script src="app.js" type="module"></script>
   </body>
 </html>
