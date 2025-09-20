@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Access Simulator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .granted {
+        color: green;
+      }
+      .denied {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Access Simulator</h1>
+
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Access Level</th>
+          <th>Request Time</th>
+          <th>Room</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Employees will be loaded here -->
+      </tbody>
+    </table>
+
+    <button id="simulateBtn">Simulate Access</button>
+
+    <h2>Results</h2>
+    <ul id="results"></ul>
+
+    <script src="app.js"></script>
+  </body>
+</html>

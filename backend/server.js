@@ -1,11 +1,13 @@
 import express from "express"
 import { auth } from "./utils.js"
+import cors from "cors"
 
 const app = express()
 const PORT = 3000
 
 // Middleware to parse JSON body
 app.use(express.json())
+app.use(cors())
 
 // Simple route
 app.get("/", (req, res) => {
