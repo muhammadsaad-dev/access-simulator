@@ -1,3 +1,5 @@
+import { readFile } from "fs/promises"
+
 function stringToTime(timeString) {
   // Split the string into hours and minutes
   const [hours, minutes] = timeString.split(":").map(Number)
@@ -9,7 +11,7 @@ function stringToTime(timeString) {
   return date
 }
 
-export async function readJSON(filePath) {
+async function readJSON(filePath) {
   try {
     const jsonString = await readFile(filePath, "utf8")
     return JSON.parse(jsonString)
@@ -18,6 +20,9 @@ export async function readJSON(filePath) {
     return null
   }
 }
+
+let roomRules = await readJSON("./roomRules.json")
+let lastVisited = {}
 
 export function auth(user) {
   const room = user.room

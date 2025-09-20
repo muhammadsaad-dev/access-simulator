@@ -1,4 +1,5 @@
 import express from "express"
+import { auth } from "./utils.js"
 
 const app = express()
 const PORT = 3000
@@ -14,7 +15,9 @@ app.get("/", (req, res) => {
 // Simulation endpoint (we'll plug in your logic here later)
 app.post("/simulate", (req, res) => {
   const employees = req.body // array of employees
-  res.json({ message: "Simulation received", employees })
+
+  let results = employees.map((employee) => auth(employee))
+  res.json({ message: "Simulation received", results })
 })
 
 app.listen(PORT, () => {
